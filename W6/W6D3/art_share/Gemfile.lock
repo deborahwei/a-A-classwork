@@ -44,6 +44,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -114,6 +117,11 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.1)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (4.0.7)
     puma (3.12.6)
     racc (1.6.0)
@@ -202,6 +210,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
@@ -212,6 +221,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
