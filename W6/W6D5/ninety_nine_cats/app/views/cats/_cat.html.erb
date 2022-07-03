@@ -5,8 +5,9 @@
    <li><%= cat.birth_date %></li>
    <li><%= cat.description %></li>
    <% if action == :show %>
-        <li> <a href = "<%= cats_url %>"> All Cats</li>
+        <li> <a href = "<%= cats_url %>"> All Cats </a></li>
     <% else %>
-        <li> <a href = "<%= cats_url(cat) %>>"> This cat</li>
+        <li> <a href = "<%= cat_url(cat) %>"> This cat </a></li>
    <% end %>
 </ul>
+
