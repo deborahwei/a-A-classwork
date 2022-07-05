@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    before_action :require_logged_in, only [:destroy]
+    before_action :require_logged_in, only: [:destroy]
 
     def new
         @user = User.new
@@ -18,9 +18,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy 
-        current_user.reset_session_token! if logged_in?
-        session[:session_token] = nil 
-        @current_user = nil 
+        logout!
+        redirect_to new_session_url
     end
 
 end

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
     
-    before action :require_logged_in, only: [:index, :show]
-
+    before_action :require_logged_in, only: [:index, :show]
+    
     def new 
-        render :new 
+        render :new
     end
 
     def create
@@ -16,9 +16,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def show 
+        @user = User.find(params[:id])
+        render :show
+    end
+
     private 
 
     def user_params 
-        params.require(:user).permit(:username, :session_token, :password_digest, :password)
+        params.require(:user).permit(:username, :password)
     end
 end
