@@ -11,18 +11,13 @@
   </head>
 
    <% if logged_in? %>
-    <h2>Welcome, <%= current_user.email %>!</h2>
-    <form action="<%= session_url %>" method="post">
-      <input
-        type="hidden"
-        name="authenticity_token"
-        value="<%= auth_token %>">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Logout">
-    </form>
+      <h2>Welcome, <%= current_user.email %>!</h2>
+      <form action="<%= session_url %>" method="post">
+      <a href="<%= new_band_url%>">Create Band</a>
+      </form>
   <% else %>
-    <a style="background-color: pink;" href="<%= new_user_url %>">Sign Up</a>
-    <a style="background-color: yellow;"href="<%= new_session_url %>">Login</a>
+      <a style="background-color: pink;" href="<%= new_user_url %>">Sign Up</a>
+      <a style="background-color: yellow;"href="<%= new_session_url %>">Login</a>
   <% end %>
 
   <body>
