@@ -2458,3 +2458,215 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/session/new" for ::1 at 2022-07-06 14:31:35 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 28ms (Views: 11.5ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/session" for ::1 at 2022-07-06 14:31:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>" hello@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", " hello@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for ::1 at 2022-07-06 14:31:46 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2022-07-06 14:31:51 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"<input\r\n        type='hidden'\r\n        name='authenticity_token'\r\n        value= rPXnuPilaXjyGPaKPdybqHZPvwD4NIRPiTfgeQEdDNCQMf8LWAP98IFdmCJ3sbvFDwVpPGgVoHoflHLxTIOt1w==\r\n      />", "user"=>{"email"=>"hello@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hello@gmail.com"], ["password_digest", "$2a$12$AWQ7EcECqrG8VqQMV1sxIOcc0299KukNEmXafZai.rPo8C9NOvedS"], ["created_at", "2022-07-06 18:31:52.384972"], ["updated_at", "2022-07-06 18:31:52.384972"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 3.0ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (3, hello@gmail.com, $2a$12$AWQ7EcECqrG8VqQMV1sxIOcc0299KukNEmXafZai.rPo8C9NOvedS, null, 2022-07-06 18:31:52.384972, 2022-07-06 18:31:52.384972).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/2dc5f459c95e2a1f/variables" for ::1 at 2022-07-06 14:31:52 -0400
+Started POST "/users" for ::1 at 2022-07-06 14:33:08 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"0FzYcebLNkTPdMPZV9tjegstZEsUKYUtllcTISiAOX3smMDCRm2izLwxrXEdtkMXcmeyd4QIoRgA9IGpZR6Yeg==", "user"=>{"email"=>"hello@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hello@gmail.com"], ["password_digest", "$2a$12$HFS7uFAtiKv/iVypWgiSNezAcK1qkj4/YM8/kNYxxEp80Fiem2AW2"], ["created_at", "2022-07-06 18:33:08.668529"], ["updated_at", "2022-07-06 18:33:08.668529"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 398ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (4, hello@gmail.com, $2a$12$HFS7uFAtiKv/iVypWgiSNezAcK1qkj4/YM8/kNYxxEp80Fiem2AW2, null, 2022-07-06 18:33:08.668529, 2022-07-06 18:33:08.668529).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/94106dba4eb2ad3f/variables" for ::1 at 2022-07-06 14:33:08 -0400
+Started GET "/bands/new" for ::1 at 2022-07-06 14:34:19 -0400
+Processing by BandsController#new as HTML
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bands" for ::1 at 2022-07-06 14:34:25 -0400
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"GzDazNQmhgk5/uBMMwUHOYpBUM6qhxFjq2uadvZExbQn9MJ/dIASgUq7juR5aCdU8wuG8jqmNVY9yAj+u9pksw==", "band"=>{"name"=>"Princesses"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:9
+  [1m[36mBand Create (0.6ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Princesses"], ["created_at", "2022-07-06 18:34:25.128828"], ["updated_at", "2022-07-06 18:34:25.128828"]]
+  ↳ app/controllers/bands_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:9
+Redirected to http://localhost:3000/bands/4
+Completed 302 Found in 8ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/bands/4" for ::1 at 2022-07-06 14:34:25 -0400
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:31
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bands" for ::1 at 2022-07-06 14:34:31 -0400
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:3
+  Rendered bands/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for ::1 at 2022-07-06 14:34:36 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2022-07-06 14:34:42 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"qd8vrssC8fL7Gl6jZuqjzYJT/QNwMCxXKP8OJGLTdLGVGzcda6RleohfMAssh4Og+xkrP+ARCGK+XJysL03Vtg==", "user"=>{"email"=>"dew354@nyu.edu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "dew354@nyu.edu"], ["password_digest", "$2a$12$vECiqbC7LwVvX2wGznzjI.LlPVCcEA3V/5.TJ4uW5GzufBpyrfAYu"], ["created_at", "2022-07-06 18:34:43.035229"], ["updated_at", "2022-07-06 18:34:43.035229"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (5, dew354@nyu.edu, $2a$12$vECiqbC7LwVvX2wGznzjI.LlPVCcEA3V/5.TJ4uW5GzufBpyrfAYu, null, 2022-07-06 18:34:43.035229, 2022-07-06 18:34:43.035229).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/571fb51ada82525a/variables" for ::1 at 2022-07-06 14:34:43 -0400
+Started POST "/users" for ::1 at 2022-07-06 14:34:58 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"qd8vrssC8fL7Gl6jZuqjzYJT/QNwMCxXKP8OJGLTdLGVGzcda6RleohfMAssh4Og+xkrP+ARCGK+XJysL03Vtg==", "user"=>{"email"=>"dew354@nyu.edu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "dew354@nyu.edu"], ["password_digest", "$2a$12$JKNIVR6rExr99hyJ723UF.eVy/SVt1sRONUYvRMCRslMHqZUfjpO6"], ["created_at", "2022-07-06 18:34:58.544335"], ["updated_at", "2022-07-06 18:34:58.544335"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 1.8ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (6, dew354@nyu.edu, $2a$12$JKNIVR6rExr99hyJ723UF.eVy/SVt1sRONUYvRMCRslMHqZUfjpO6, null, 2022-07-06 18:34:58.544335, 2022-07-06 18:34:58.544335).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/3a0d0da0a4961e1d/variables" for ::1 at 2022-07-06 14:34:58 -0400
+Started POST "/__better_errors/3a0d0da0a4961e1d/eval" for ::1 at 2022-07-06 14:35:40 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users" for ::1 at 2022-07-06 14:38:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"qd8vrssC8fL7Gl6jZuqjzYJT/QNwMCxXKP8OJGLTdLGVGzcda6RleohfMAssh4Og+xkrP+ARCGK+XJysL03Vtg==", "user"=>{"email"=>"dew354@nyu.edu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "dew354@nyu.edu"], ["password_digest", "$2a$12$riCR12FVJPbm4FkX3Fk30.3ObuMm3w90pfORi4n2RXwz.F9WrsMru"], ["created_at", "2022-07-06 18:38:10.295591"], ["updated_at", "2022-07-06 18:38:10.295591"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 1.7ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (7, dew354@nyu.edu, $2a$12$riCR12FVJPbm4FkX3Fk30.3ObuMm3w90pfORi4n2RXwz.F9WrsMru, null, 2022-07-06 18:38:10.295591, 2022-07-06 18:38:10.295591).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/19a4ba4a6b8d5c0e/variables" for ::1 at 2022-07-06 14:38:10 -0400
+Started GET "/users/new" for ::1 at 2022-07-06 14:38:14 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2022-07-06 14:38:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DXzRfDwBkL09oLuX+fxN6D+fQxzMh95PLbZh/z8X3CsxuMnPnKcENU7l1T+zkW2FRtWVIFym+nq7FfN3col9LA==", "user"=>{"email"=>"hello@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hello@gmail.com"], ["password_digest", "$2a$12$lZe6B5i4cKkwTeqWKN30een0ypuO1rchI/JiVwhXbyyr7CyPtDPb."], ["created_at", "2022-07-06 18:38:20.096898"], ["updated_at", "2022-07-06 18:38:20.096898"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 395ms (ActiveRecord: 1.1ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "session_token" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (8, hello@gmail.com, $2a$12$lZe6B5i4cKkwTeqWKN30een0ypuO1rchI/JiVwhXbyyr7CyPtDPb., null, 2022-07-06 18:38:20.096898, 2022-07-06 18:38:20.096898).
+: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/85ff4be78eb32f6f/variables" for ::1 at 2022-07-06 14:38:20 -0400
+Started POST "/__better_errors/85ff4be78eb32f6f/eval" for ::1 at 2022-07-06 14:38:27 -0400

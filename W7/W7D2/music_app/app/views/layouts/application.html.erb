@@ -13,6 +13,10 @@
    <% if logged_in? %>
     <h2>Welcome, <%= current_user.email %>!</h2>
     <form action="<%= session_url %>" method="post">
+      <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= auth_token %>">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Logout">
     </form>
