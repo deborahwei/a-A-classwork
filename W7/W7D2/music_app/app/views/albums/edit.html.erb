@@ -1,5 +1,4 @@
 <form action="<%= album_url(@album) %>" method="post">
-    <%= auth_token %>
     <input type="hidden" name="_method" value="patch">
     <label>Album title:
         <input type="text" name="album[title]" value="<%= @album.title %>">

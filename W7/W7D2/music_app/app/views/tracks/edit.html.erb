@@ -1,6 +1,5 @@
 <form action="<%= track_url(@track) %>" method="post">
     <input type="hidden" name="_method" value="patch">
-        <%= auth_token %>
     <label>Track name:
         <input type="text" name="track[title]" value="<%= @track.title %>">
     </label>
