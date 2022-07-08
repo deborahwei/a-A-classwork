@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true 
 
     has_many :subs, 
-    foreign_key: :moderator_id, 
+    foreign_key: :user_id, 
     class_name: :Sub
 
     def self.find_by_credentials(username, password)

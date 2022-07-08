@@ -2,12 +2,11 @@
 
 <h3> Description </h3>
 
-<h3> <%= @sub.description %></h3>
+<p> <%= @sub.description %></h3>
+
+<br>
 
 <a href="<%= new_post_url %>">Make new post!</a>
-<ul>
-    <% @sub.posts.all do |post| %>
-        <li> <a href="<%= post_url(post) %>"<%= post.title %>></a></li>
-    <% end %>
-</ul>
-<a href="<%= edit_post_url(@sub) %>">Edit</a>
+
+<br>
+<a href="<%= edit_sub_url(@sub) %>">Edit</a>

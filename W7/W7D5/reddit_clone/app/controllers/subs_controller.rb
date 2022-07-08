@@ -16,7 +16,7 @@ class SubsController < ApplicationController
         end
     end
 
-    def edit 
+    def edit
         @sub = Sub.find(params[:id])
     end
 
