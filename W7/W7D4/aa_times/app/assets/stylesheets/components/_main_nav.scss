@@ -1,17 +1,24 @@
 .main-nav {
-
+  display: flex; 
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: center;
 }
 
 .left-nav {
 
   > ul {
     > li {
-
+      font-family: "nyt-franklin",arial,helvetica,sans-serif;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      padding: 15px;
+      font-weight: 700;
     }
   }
 
@@ -25,20 +32,23 @@
   > ul {
 
     > li {
-  
+      padding: 2px;
     }
 
     > li:last-of-type {
-  
+
     }
   }
   
   i {
-
+    font-size: 16px;
   }
 }
 
-.left-nav > ul > li:hover,
-.right-nav > ul > li:last-of-type:hover {
+.left-nav > ul > li:hover {
+  background: #DCDCDC;
+}
 
+.right-nav > ul > li:last-of-type:hover {
+ 
 }
