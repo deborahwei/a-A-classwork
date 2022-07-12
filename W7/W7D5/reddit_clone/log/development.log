@@ -6991,3 +6991,437 @@ Migrating to CreatePostSubs (20220711002721)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/subs/1" for ::1 at 2022-07-10 20:54:16 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/deborahwei/.rbenv/versions/2.6.8/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 32ms (Views: 15.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 20:54:17 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...:content, sub_ids:[], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/10522ef05d720e3b/variables" for ::1 at 2022-07-10 20:54:17 -0400
+Started GET "/subs/1" for ::1 at 2022-07-10 20:54:19 -0400
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 20:54:20 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...:content, sub_ids:[], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/0d028d8a6ce51419/variables" for ::1 at 2022-07-10 20:54:20 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:54:50 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/2a79127e05b2dff5/variables" for ::1 at 2022-07-10 20:54:50 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:54:51 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/b812e71870b1e208/variables" for ::1 at 2022-07-10 20:54:51 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:56:00 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/370f099e94ecad49/variables" for ::1 at 2022-07-10 20:56:00 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:56:01 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/d1f80dac19a2b88b/variables" for ::1 at 2022-07-10 20:56:01 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:56:45 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/53ff7cbed561c89c/variables" for ::1 at 2022-07-10 20:56:45 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 20:56:46 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started POST "/__better_errors/6dd5ac242d259f57/variables" for ::1 at 2022-07-10 20:56:46 -0400
+Started POST "/posts/new" for ::1 at 2022-07-10 20:57:15 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/1" for ::1 at 2022-07-10 22:22:43 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:51:in `'
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:23:46 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 8.2ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:24:33 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 9.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:24:44 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 7.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:24:45 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 7.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:25:02 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 10.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:25:18 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:55:in `'
+
+Started POST "/__better_errors/677dc1cb4f2e873e/variables" for ::1 at 2022-07-10 22:25:18 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 22:25:19 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+...content, sub_ids: [], :user_id)
+...                              ^:
+  app/controllers/posts_controller.rb:55:in `'
+
+Started POST "/__better_errors/3e711dd3f8e7b738/variables" for ::1 at 2022-07-10 22:25:19 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 22:25:38 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 9.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/subs" for ::1 at 2022-07-10 22:25:47 -0400
+Processing by SubsController#index as HTML
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.6ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:3
+  Rendered subs/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 24ms (Views: 15.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/subs/1" for ::1 at 2022-07-10 22:25:48 -0400
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:25:50 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16ms (Views: 7.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-10 22:33:04 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:18
+  Rendered posts/new.html.erb within layouts/application (207.3ms)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 1.3ms)
+
+
+
+NameError - undefined local variable or method `post' for #<#<Class:0x0000000105ac8608>:0x0000000105bb0d90>
+Did you mean?  @post:
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb___1488529280923734448_2199288920'
+  app/views/posts/new.html.erb:18:in `_app_views_posts_new_html_erb___1488529280923734448_2199288920'
+  app/controllers/posts_controller.rb:8:in `new'
+
+Started POST "/__better_errors/66426f5c853ed547/variables" for ::1 at 2022-07-10 22:33:05 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 22:33:07 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:18
+  Rendered posts/new.html.erb within layouts/application (228.0ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.7ms)
+
+
+
+NameError - undefined local variable or method `post' for #<#<Class:0x0000000105ac8608>:0x00000001051262f8>
+Did you mean?  @post:
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb___1488529280923734448_2190026860'
+  app/views/posts/new.html.erb:18:in `_app_views_posts_new_html_erb___1488529280923734448_2190026860'
+  app/controllers/posts_controller.rb:8:in `new'
+
+Started POST "/__better_errors/cd177182079f0a91/variables" for ::1 at 2022-07-10 22:33:07 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 22:33:15 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:18
+  Rendered posts/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `sub_ids' for #<Post:0x00000001061b7e00>
+Did you mean?  sub_id
+               sub_id?
+               sub_id=:
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb___1488529280923734448_2198711180'
+  app/views/posts/new.html.erb:18:in `_app_views_posts_new_html_erb___1488529280923734448_2198711180'
+  app/controllers/posts_controller.rb:8:in `new'
+
+Started POST "/__better_errors/1c85fb1265f2646b/variables" for ::1 at 2022-07-10 22:33:15 -0400
+Started GET "/posts/new" for ::1 at 2022-07-10 22:33:16 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:18
+  Rendered posts/new.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `sub_ids' for #<Post:0x000000011a7ec9d8>
+Did you mean?  sub_id
+               sub_id?
+               sub_id=:
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb___1488529280923734448_2223013340'
+  app/views/posts/new.html.erb:18:in `_app_views_posts_new_html_erb___1488529280923734448_2223013340'
+  app/controllers/posts_controller.rb:8:in `new'
+
+Started POST "/__better_errors/8c32b4aa676b13ec/variables" for ::1 at 2022-07-10 22:33:16 -0400
+Started GET "/" for ::1 at 2022-07-11 09:00:43 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/deborahwei/.rbenv/versions/2.6.8/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/deborahwei/.rbenv/versions/2.6.8/lib/ruby/gems/2.6.0/gems/railties-5.2.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/deborahwei/.rbenv/versions/2.6.8/lib/ruby/gems/2.6.0/gems/railties-5.2.8/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/subs/1" for ::1 at 2022-07-11 09:00:46 -0400
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.8ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 163ms (Views: 136.3ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/subs" for ::1 at 2022-07-11 09:00:49 -0400
+Processing by SubsController#index as HTML
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:3
+  Rendered subs/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/session" for ::1 at 2022-07-11 09:00:51 -0400
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/7a8e3c66e37c0f8d/variables" for ::1 at 2022-07-11 09:00:51 -0400
+Started GET "/subs/1" for ::1 at 2022-07-11 09:00:54 -0400
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/subs" for ::1 at 2022-07-11 09:00:56 -0400
+Processing by SubsController#index as HTML
+  Rendering subs/index.html.erb within layouts/application
+  [1m[36mSub Load (0.4ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/subs/index.html.erb:3
+  Rendered subs/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/subs/new" for ::1 at 2022-07-11 09:00:57 -0400
+Processing by SubsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering subs/new.html.erb within layouts/application
+  Rendered subs/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/subs" for ::1 at 2022-07-11 09:01:02 -0400
+Processing by SubsController#create as HTML
+  Parameters: {"authenticity_token"=>"PkIMfjotZX/yPuMxIhkAx93MJcDIlhjQQK9/TUIdvQRSA0M3ojErIyHWRIifoXMa/d3GcuCspsdAQgfFARHVZA==", "sub"=>{"title"=>"Michael", "description"=>"sucks"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/subs_controller.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:12
+  [1m[36mSub Create (1.6ms)[0m  [1m[32mINSERT INTO "subs" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Michael"], ["description", "sucks"], ["user_id", 1], ["created_at", "2022-07-11 13:01:02.413624"], ["updated_at", "2022-07-11 13:01:02.413624"]]
+  ↳ app/controllers/subs_controller.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/subs_controller.rb:12
+Redirected to http://localhost:3000/subs/4
+Completed 302 Found in 18ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/subs/4" for ::1 at 2022-07-11 09:01:02 -0400
+Processing by SubsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSub Load (0.5ms)[0m  [1m[34mSELECT  "subs".* FROM "subs" WHERE "subs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/subs_controller.rb:33
+  Rendering subs/show.html.erb within layouts/application
+  Rendered subs/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-07-11 09:01:03 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ls28HLjUcrlB8J1FEhVTOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSub Load (0.3ms)[0m  [1m[34mSELECT "subs".* FROM "subs"[0m
+  ↳ app/views/posts/new.html.erb:18
+  Rendered posts/new.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.1ms)
+
+
+
+NoMethodError - undefined method `sub_ids' for #<Post:0x000000011f923040>
+Did you mean?  sub_id
+               sub_id?
+               sub_id=:
+  app/views/posts/new.html.erb:24:in `block in _app_views_posts_new_html_erb___186094174904618328_2483611800'
+  app/views/posts/new.html.erb:18:in `_app_views_posts_new_html_erb___186094174904618328_2483611800'
+  app/controllers/posts_controller.rb:8:in `new'
+
+Started POST "/__better_errors/e9344873221777e8/variables" for ::1 at 2022-07-11 09:01:03 -0400

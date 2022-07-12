@@ -47,7 +47,7 @@ class PostsController < ApplicationController
         current_user.id == @post.author_id
     end
 
-    def post_params 
-        params.require(:sub).permit(:title, :url, :content, sub_ids:[], :user_id)
+    def post_params
+        params.require(:post).permit(:url, :title, :content, :user_id, sub_ids: [])
     end
 end
