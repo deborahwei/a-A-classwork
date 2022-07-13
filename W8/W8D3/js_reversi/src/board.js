@@ -35,10 +35,10 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
-  if (pos[0] > 8 || pos[0] < 0) {
+  if (pos[0] >= 8 || pos[0] < 0) {
     return false 
   }
-  else if (pos[1] > 8 || pos[1] < 0) {
+  else if (pos[1] >= 8 || pos[1] < 0) {
     return false
   }
   else { 
@@ -112,6 +112,7 @@ Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
  * color being flipped.
  */
 Board.prototype.validMove = function (pos, color) {
+  console.log(pos)
   if (this.isOccupied(pos) || !this.isValidPos(pos)) {
     return false 
   }
@@ -157,7 +158,6 @@ Board.prototype.validMoves = function (color) {
   for (let i = 0; i < this.grid.length; i++) {
     for (let j = 0; j < this.grid[i].length; j++) {
       if (this.validMove([i, j], color)) {
-        debugger
         validMovesArr.push([i, j]);
       }
     }
@@ -171,6 +171,7 @@ Board.prototype.validMoves = function (color) {
  * Checks if there are any valid moves for the given color.
  */
 Board.prototype.hasMove = function (color) {
+  return this.validMoves(color).length !== 0
 };
 
 
@@ -180,6 +181,7 @@ Board.prototype.hasMove = function (color) {
  * the black player are out of moves.
  */
 Board.prototype.isOver = function () {
+  return !this.hasMove('black') && !this.hasMove('white')
 };
 
 
