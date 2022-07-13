@@ -4,6 +4,8 @@ Array.prototype.myEach = function(func) {
     }
 }
 
+
+
 Array.prototype.myMap = function(callback) {
     const newArr = [];
     
