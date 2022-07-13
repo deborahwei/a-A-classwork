@@ -39,6 +39,7 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 65px;
+    /* makes rectangular box */
     background: #000;
     color: #fff;
     font-size: 12px;
