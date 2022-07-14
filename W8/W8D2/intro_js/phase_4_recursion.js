@@ -94,8 +94,7 @@ function bsearch(arr, target) {
 console.log(bsearch([1, 2, 3, 4, 5], 2))
 
 function mergeSort(arr) { 
-    if (arr.length <= 1)
-    return arr 
+    if (arr.length <= 1) return arr;
     let m = Math.trunc(arr.length / 2)
     let left = mergeSort(arr.slice(0, m))
     let right = mergeSort(arr.slice(m, arr.length))
