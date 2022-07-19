@@ -1,12 +1,12 @@
-// Function.prototype.inherits = function(superclass) { 
-//     // subclass.inherits(superclass)
-//     // passes in class we want to inherit from 
-//     // since subclass calls this inherit function, 'this' is subclass
-//     function Surrogate() {}
-//     Surrogate.prototype = superclass.prototype
-//     this.prototype = new Surrogate()
-//     this.prototype.constructor = this
-// }
+Function.prototype.inherits = function(superclass) { 
+    // subclass.inherits(superclass)
+    // passes in class we want to inherit from 
+    // since subclass calls this inherit function, 'this' is subclass
+    function Surrogate() {}
+    Surrogate.prototype = superclass.prototype
+    this.prototype = new Surrogate()
+    this.prototype.constructor = this
+}
 
 Function.prototype.inherits = function(superclass) { 
     this.prototype = Object.create(superclass.prototype);

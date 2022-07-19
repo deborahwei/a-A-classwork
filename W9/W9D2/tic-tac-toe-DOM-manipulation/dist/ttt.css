@@ -1,0 +1,33 @@
+.ttt {
+}
+
+ul { 
+    display: flex; 
+    flex-wrap: wrap;
+    width: 310px; 
+    list-style: none;
+}
+
+li::marker { 
+    display: none;
+}
+
+li { 
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background: grey;
+}
+
+li:hover { 
+    background: yellow;
+}
+
+.clicked { 
+    background: white;
+}
+
+
+
+
+
