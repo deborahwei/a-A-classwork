@@ -3,9 +3,12 @@ class View {
     this.game = game 
     this.el = el 
     this.setupBoard()
+    console.log('hi')
+    this.bindEvents()
   }
 
   setupBoard() {
+    debugger
     const board = document.createElement('ul')
     for (let r = 0; r < 3; r++ ) {
       for (let c = 0; c < 3; c++) {
@@ -18,19 +21,24 @@ class View {
   }
   
   bindEvents() {
-    addEventListener('click', handleClick)
+    debugger;
+    this.addEventListener('click', this.handleClick.bind(this))
   }
 
   handleClick(e) {
-    e.stopPropagation()
-    let ele = e.target
-    ele.classList.add('clicked')
-    this.game.playMove(data-pos.value)
+    let ele = e.target // this is where the event occured 
+    ele.classList.add("clicked")
+    alert('hi')
+    // if (!ele.innerText){ // if there is no mark 
+    //   ele.innerText = this.game.currentPlayer; // set mark to the current player
+    //   this.game.playMove(data-pos.value); // gives us the position at data-pos 
+    //   this.makeMove(ele); 
+    // }
+  } 
+
+  makeMove(square) {
+    square.classList.add("clicked");
   }
-
-  makeMove(square) {}
-    if  {alert(‘Invalid move’)}
-
 }
 
 module.exports = View;
